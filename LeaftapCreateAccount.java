@@ -9,8 +9,7 @@ public class LeaftapCreateAccount {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		//Pre-condition:
+		String text = "Jothitest account13";
 ChromeDriver driver = new ChromeDriver();
 driver.get("http://leaftaps.com/opentaps/control/main");
 driver.manage().window().maximize();
@@ -23,7 +22,7 @@ driver.findElement(By.className("decorativeSubmit")).click();
 driver.findElement(By.linkText("CRM/SFA")).click();
 driver.findElement(By.linkText("Accounts")).click();
 driver.findElement(By.linkText("Create Account")).click();
-driver.findElement(By.id("accountName")).sendKeys("test account name");
+driver.findElement(By.id("accountName")).sendKeys("Jothitest account13");
 driver.findElement(By.name("description")).sendKeys("Selenium Automation Tester");
 
 WebElement dd1 = driver.findElement(By.name("industryEnumId"));
@@ -36,7 +35,7 @@ ownershipdd.selectByVisibleText("S-Corporation");
 
 WebElement dd3 = driver.findElement(By.id("dataSourceId"));
 Select sourcedd = new Select(dd3);
-sourcedd.deselectByValue("Employee");
+sourcedd.selectByValue("LEAD_EMPLOYEE");
 
 
 WebElement dd4 = driver.findElement(By.id("marketingCampaignId"));
@@ -50,7 +49,14 @@ statedd.selectByValue("TX");
 
 driver.findElement(By.className("smallSubmit")).click();
 
-driver.close();
+
+String aname = (driver.findElement(By.partialLinkText("Jothitest")).getText());
+if (aname.contains(text))
+	System.out.println("account name is created successfully" + aname + text);
+else
+	System.out.println("account name is not created successfully" + aname + text);
+
+//driver.close();
 	}
 
 }
