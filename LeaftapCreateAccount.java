@@ -1,4 +1,4 @@
-package week1.Day5;
+ package week1.Day5;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -52,7 +52,7 @@ driver.findElement(By.className("smallSubmit")).click();
 
 String aname = (driver.findElement(By.partialLinkText("Jothitest")).getText());
 if (aname.contains(text))
-	System.out.println("account name is created successfully" + aname + text);
+	System.out.println("account name is created successfully " + text);
 else
 	System.out.println("account name is not created successfully" + aname + text);
 
