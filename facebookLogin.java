@@ -36,9 +36,9 @@ Select yeardd = new Select(year);
 yeardd.selectByVisibleText("1986");
 
 
-driver.findElement(By.linkText("female")).click();
+driver.findElement(By.xpath("//label[text()='Female'] ")).click();
 
-driver.findElement(By.name("websubmit")).click(); 
+driver.findElement(By.xpath("//button[@name='websubmit'] ")).click(); 
 	}
 
 }
